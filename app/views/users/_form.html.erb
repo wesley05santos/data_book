@@ -16,12 +16,18 @@
     <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <%= form.fields_for :phones do |phone_form| %>
-    <div class="my-5">
-      <%= phone_form.label :number %>
-      <%= phone_form.text_field :number, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-    </div>
-  <% end %>
+  <div id="form_phone">
+    <%= form.fields_for :phones do |phone_form| %>
+      <div class="my-5">
+        <%= phone_form.label :number %>
+        <%= phone_form.text_field :number, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div id='add_phone_btn' class="my-5">
+    <%= link_to  "+", add_form_phone_path(qtd: 0), data: { turbo_method: :put }, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
 
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
