@@ -1,12 +1,13 @@
 <%= turbo_stream.append 'form_phone' do %>
-  <div class="my-5">
+  <div id="new_input_phone_<%= @id %>" class="my-5">
     <label for="user_phones_attributes_<%= @id %>_number">Number</label>
     <input class="block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" type="text" name="user[phones_attributes][<%= @id %>][number]" id="user_phones_attributes_<%= @id %>_number">
   </div>
 <% end %>
 
-<%= turbo_stream.replace 'add_phone_btn' do %>
-  <div id='add_phone_btn' class="my-5">
+<%= turbo_stream.replace 'actions_form_phone_btn' do %>
+  <div id="actions_form_phone_btn" class="my-5">
     <%= link_to  "+", add_form_phone_path(qtd: @id), data: { turbo_method: :put }, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to  "-", remove_form_phone_path(qtd: @id), data: { turbo_method: :put }, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
 <% end %>

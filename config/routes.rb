@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   root "users#index"
 
   put "add_form_phone", to: "users#add_form_phone"
+  put "remove_form_phone", to: "users#remove_form_phone"
 end
