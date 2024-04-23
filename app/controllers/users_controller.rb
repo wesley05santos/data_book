@@ -72,6 +72,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy_form_phone
+    binding.break
+    @index = params[:index]
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -80,6 +85,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, phones_attributes: [:id, :number])
+      params.require(:user).permit(:name, phones_attributes: [:id, :number, :_destroy])
     end
 end

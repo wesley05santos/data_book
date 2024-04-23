@@ -12,4 +12,5 @@ Rails.application.routes.draw do
 
   put "add_form_phone", to: "users#add_form_phone"
   put "remove_form_phone", to: "users#remove_form_phone"
+  get "destroy_form_phone", to: "users#destroy_form_phone"
 end
