@@ -1,4 +1,5 @@
 <%= turbo_frame_tag "#{@index}_hidden_destroy_phone" do %>
-  <input value="true" autocomplete="off" type="hidden" name="user[phones_attributes][<%= @index %>][_destroy]" id="user_phones_attributes_<%= @index %>__destroy">
-  <%= link_to  "-", remove_form_phone_path(index: @index), data: { turbo_method: :put }, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium", style: "background-color: red;" %>
+    <input value="<%= @value_destroy %>" autocomplete="off" type="hidden" name="user[phones_attributes][<%= @index %>][_destroy]" id="user_phones_attributes_<%= @index %>__destroy">
+    <%= link_to  "-", destroy_form_phone_path(index: @index, value_destroy: @value_destroy_bool), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium", style: "background-color: #{@color};"%>
 <% end %>
+

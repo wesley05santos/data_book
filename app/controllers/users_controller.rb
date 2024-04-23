@@ -73,7 +73,9 @@ class UsersController < ApplicationController
   end
 
   def destroy_form_phone
-    binding.break
+    @value_destroy = params[:value_destroy] == 'true' ? false : true
+    @value_destroy_bool = params[:value_destroy] == 'true' ? false : true
+    @color = @value_destroy ? 'red' : '#e5e7eb'
     @index = params[:index]
   end
 

@@ -28,7 +28,7 @@
         <%= phone_form.text_field :number, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
         <%= turbo_frame_tag "#{phone_form.index}_hidden_destroy_phone" do %>
           <%= phone_form.hidden_field :_destroy, value: false %>
-          <%= link_to  "-", destroy_form_phone_path(index: phone_form.index), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+          <%= link_to  "-", destroy_form_phone_path(index: phone_form.index, value_destroy: false), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
         <% end %>
       </div>
     <% end %>
